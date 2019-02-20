@@ -13,9 +13,11 @@
 	<a href="addUser.jsp">Thêm Người dùng mới</a>
 	<h1>Danh sách user</h1>
 	<%
-	UserService userService = new UserService();
-	List<User> users = userService.getAllUser();
+		String name = (String) session.getAttribute("name"); //do trả về một đối tượng, nên ta phải ép kiểu sang String
+		UserService userService = new UserService();
+		List<User> users = userService.getAllUser();
 	%>
+	<h2><%=name %></h2>
 	<table>
 		<tr>
 			<th>ID</th>
@@ -28,14 +30,20 @@
 			for (User user : users) {
 		%>
 		<tr>
-			<td><%=user.getId() %></td>
-			<td><%=user.getName() %></td>
-			<td><%=user.getUsername() %></td>
-			<th><a href="editUser.jsp?id=<%=user.getId()%>">Sửa</a>|<a href="deleteUser.jsp?id=<%=user.getId()%>">Xóa</a>|<a href="viewUser.jsp?id=<%=user.getId()%>">Chi Tiết</a></th>
+			<td><%=user.getId()%></td>
+			<td><%=user.getName()%></td>
+			<td><%=user.getUsername()%></td>
+			<th><a href="editUser.jsp?id=<%=user.getId()%>">Sửa</a>|<a
+				href="deleteUser.jsp?id=<%=user.getId()%>">Xóa</a>|<a
+				href="viewUser.jsp?id=<%=user.getId()%>">Chi Tiết</a></th>
 		</tr>
 		<%
 			}
 		%>
 	</table>
+	<%
+	Cookie cookie = new Cookie("name", "aaa"); //Không cho phép có dấu cách trong cookie value, vd("aaa "). Nếu có dấu cách nó sẽ báo lỗi
+	response.addCookie(cookie);
+	%>	
 </body>
 </html>

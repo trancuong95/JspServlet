@@ -7,6 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+	Cookie[] cookies = request.getCookies();
+	for(Cookie cookie: cookies){
+		if(cookie.getName().equals("name")){
+			String value = cookie.getValue();
+			%>
+			<h1><%=value %></h1>
+			<%
+		}
+		
+	}
+	%>
 	<h1>Them nguoi dung moi</h1>
 	<!-- Tạo form -->
 	<form action="addUserPost.jsp" method="post">
