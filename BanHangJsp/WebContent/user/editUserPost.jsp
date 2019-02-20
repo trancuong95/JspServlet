@@ -13,10 +13,10 @@
 	<%
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
-		String password = request.getParameter("password");
 		String phone = request.getParameter("phone");
-		String about = request.getParameter("about");
 		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String about = request.getParameter("about");
 		String role = request.getParameter("role");
 		String[] favourites = request.getParameterValues("favourites");
 		
@@ -28,7 +28,6 @@
 		
 		UserService userService = new UserService();
 		User user = new User();
-		//user.setId(Integer.valueOf("id"));
 		user.setName(name);
 		user.setPassword(password);
 		user.setPhone(phone);
@@ -36,6 +35,7 @@
 		user.setUsername(username);
 		user.setRole(role);
 		user.setFavourites(fav);
+		user.setId(Integer.valueOf(id));
 		
 		userService.updateUser(user);
 		

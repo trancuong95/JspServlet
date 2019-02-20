@@ -6,7 +6,7 @@
 <%
 	String idStr = request.getParameter("id"); //ở đây phải để viết id thường, viết hoa sẽ thông báo lỗi
 	UserService userService = new UserService();
-	userService.deleteUser(Integer.parseInt(idStr));
+	userService.deleteUser(Integer.valueOf(idStr));
 	
 	response.sendRedirect("/BanHangJsp/user/listUser.jsp");
 %>

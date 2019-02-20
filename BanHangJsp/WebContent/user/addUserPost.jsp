@@ -24,8 +24,7 @@
 		for(String f: favourites){
 			fav += f + ", ";
 		}
-		
-		
+				
 		UserService userService = new UserService();
 		User user = new User();
 		user.setName(name);
@@ -43,4 +42,4 @@
 </body>
 </html>
 
-<!-- Như vậy tạo trang chứa link đến form cần điền, tạo trang form để điền các thông tin, và tạo - tùy biến ở trang để hiện thị nội dung hiển thị nội dung -->
+<!-- Như vậy tạo trang chứa link đến form cần điền, tạo trang form để điền các thông tin, và tạo - tùy biến ở trang để hiện thị nội dung cần hiển thị -->

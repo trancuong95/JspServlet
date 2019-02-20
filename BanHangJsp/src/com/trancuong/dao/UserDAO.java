@@ -39,7 +39,7 @@ public class UserDAO {
 	
 	public User getUserById(int id) {
 		Connection connection = JdbcConnection.getJdbcConnection();
-		String sql = "SELECT (ID, NAME, PHONE, USERNAME, PASSWORD, ABOUT, ROLE, FAVOURITES) FROM USER WHERE ID = ?";
+		String sql = "SELECT * FROM USER WHERE ID = ?";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, id);

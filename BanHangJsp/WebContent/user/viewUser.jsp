@@ -13,14 +13,14 @@
 	<%
 		String idStr = request.getParameter("id"); //ở đây phải để viết id thường, viết hoa sẽ thông báo lỗi
 		UserService userService = new UserService();
-		User user = userService.getUserById(Integer.valueOf(idStr));
+		User user = userService.getUserById(Integer.parseInt(idStr));
 	%>
 
 	<!-- Tạo bảng hiển thị các thông tin điền vào form -->
 	<table>
 		<tr>
 			<td>Tên</td>
-			<td><%=user.getName()%></td>
+			<td><%=user.getName() %></td>
 		</tr>
 		<tr>
 			<td>Mật Khẩu</td>
@@ -31,8 +31,16 @@
 			<td><%=user.getPhone()%></td>
 		</tr>
 		<tr>
+			<td>Tên Tài Khoản</td>
+			<td><%=user.getUsername()%></td>
+		</tr>
+		<tr>
 			<td>Giới Thiệu</td>
 			<td><%=user.getAbout()%></td>
+		</tr>
+		<tr>
+			<td>Phân Quyền</td>
+			<td><%=user.getRole()%></td>
 		</tr>
 		<tr>
 			<td>Sở Thích</td>

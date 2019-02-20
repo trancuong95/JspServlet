@@ -12,7 +12,7 @@
 	<%
 		String idStr = request.getParameter("id"); //ở đây phải để viết id thường, viết hoa sẽ thông báo lỗi
 		UserService userService = new UserService();
-		User user = userService.getUserById(Integer.valueOf("idStr"));
+		User user = userService.getUserById(Integer.valueOf(idStr)); //nên nhớ ở đây idStr đã là 1 string rồi nên không được để trong dấu "idStr", không nó sẽ báo lỗi
 	%>
 	<h1>Sửa người dùng</h1>
 	<form action="editUserPost.jsp" method="post">

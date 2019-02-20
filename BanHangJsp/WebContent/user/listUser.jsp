@@ -31,7 +31,7 @@
 			<td><%=user.getId() %></td>
 			<td><%=user.getName() %></td>
 			<td><%=user.getUsername() %></td>
-			<th><a href="editUser.jsp?id=<%=user.getId() %>">Sửa</a>|<a href="deleteUser.jsp?id=<%=user.getId() %>">Xóa</a>|<a href="viewUser.jsp?id=<%=user.getId() %>">Chi Tiết</a></th>
+			<th><a href="editUser.jsp?id=<%=user.getId()%>">Sửa</a>|<a href="deleteUser.jsp?id=<%=user.getId()%>">Xóa</a>|<a href="viewUser.jsp?id=<%=user.getId()%>">Chi Tiết</a></th>
 		</tr>
 		<%
 			}
