@@ -1,50 +1,42 @@
+<%@page import="com.trancuong.model.User"%>
+<%@page import="com.trancuong.service.UserService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Show User</title>
 </head>
 <body>
 	<!-- Lấy ra các thông tin từ form gửi lên server -->
 	<%
-		String name = request.getParameter("name");
-		String password = request.getParameter("password");
-		String phone = request.getParameter("phone");
-		String about = request.getParameter("about");
-		String favourite1 = request.getParameter("favourite 1");
-		String favourite2 = request.getParameter("favourite 2");
-		String fav = "";
-		if (!(favourite1.isEmpty())) {
-			fav += favourite1;
-		}
-		if (!(favourite2.isEmpty())) {
-			fav += favourite2;
-		}
+		String idStr = request.getParameter("id"); //ở đây phải để viết id thường, viết hoa sẽ thông báo lỗi
+		UserService userService = new UserService();
+		User user = userService.getUserById(Integer.valueOf(idStr));
 	%>
 
 	<!-- Tạo bảng hiển thị các thông tin điền vào form -->
 	<table>
 		<tr>
-			<td>Ten</td>
-			<td><%=name%></td>
+			<td>Tên</td>
+			<td><%=user.getName()%></td>
 		</tr>
 		<tr>
-			<td>Mat Khau</td>
-			<td><%=password%></td>
+			<td>Mật Khẩu</td>
+			<td><%=user.getPassword()%></td>
 		</tr>
 		<tr>
-			<td>Dien Thoai</td>
-			<td><%=phone%></td>
+			<td>Điện Thoại</td>
+			<td><%=user.getPhone()%></td>
 		</tr>
 		<tr>
-			<td>Gioi Thieu</td>
-			<td><%=about%></td>
+			<td>Giới Thiệu</td>
+			<td><%=user.getAbout()%></td>
 		</tr>
 		<tr>
-			<td>So thich</td>
-			<td><%=fav%></td>
+			<td>Sở Thích</td>
+			<td><%=user.getFavourites()%></td>
 		</tr>
 	</table>
 </body>

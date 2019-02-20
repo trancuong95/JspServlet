@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="user/addUser.jsp">Them User</a>
+	<a href="user/listUser.jsp">Danh Sách User</a>
 </body>
 </html>
 
